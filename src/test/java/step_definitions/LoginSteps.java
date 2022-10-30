@@ -1,5 +1,6 @@
 package step_definitions;
 
+import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.junit.Assert;
@@ -17,6 +18,10 @@ public class LoginSteps implements CommonPage {
     }
 
 
+    @Given("User opens Url")
+    public void userOpensUrl() {
+        BrowserUtils.getDriver();
+    }
     @When("user enters {string} as {string}")
     public void user_enters_as(String value, String placeHolder) {
         BrowserUtils.sendKeys(BrowserUtils.getDriver().findElement(By.xpath(String.format(XPATH_TEMPLATE_INPUT_FIELD, placeHolder))),value);
@@ -32,6 +37,7 @@ public class LoginSteps implements CommonPage {
         public void verify_the_title_of_the_page () {
             BrowserUtils.assertEquals(BrowserUtils.getDriver().getTitle(), "Interview App");
         }
-    }
+
+}
 
 
