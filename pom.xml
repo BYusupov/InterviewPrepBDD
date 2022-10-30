@@ -73,7 +73,7 @@
                             <goal>generate</goal>
                         </goals>
                         <configuration>
-                            <projectName>Sauce Demo BDD</projectName>
+                            <projectName>InterviewPrepBDD</projectName>
                             <skip>false</skip>
                             <!-- output directory for the generated report -->
                             <outputDirectory>${project.build.directory}/cucumber-reports</outputDirectory>
