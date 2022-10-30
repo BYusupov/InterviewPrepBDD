@@ -33,10 +33,12 @@ public class LoginSteps implements CommonPage {
             BrowserUtils.assertEquals(BrowserUtils.getDriver().getTitle(), "Interview App");
         }
 
+
     @Given("User opens Url")
     public void userOpensUrl() {
         BrowserUtils.getDriver();
     }
+
 }
 
 
