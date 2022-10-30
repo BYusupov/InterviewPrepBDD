@@ -1,14 +1,14 @@
 package step_definitions;
 
+import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
-import org.junit.Assert;
 import org.openqa.selenium.By;
 import pages.CommonPage;
 import pages.LoginPage;
 import utils.BrowserUtils;
 
-import java.util.Map;
+
 
 public class LoginSteps implements CommonPage {
     LoginPage page;
@@ -33,6 +33,11 @@ public class LoginSteps implements CommonPage {
             BrowserUtils.assertEquals(BrowserUtils.getDriver().getTitle(), "Interview App");
         }
 
+
+    @Given("User opens Url")
+    public void userOpensUrl() {
+        BrowserUtils.getDriver();
+    }
 
 }
 
