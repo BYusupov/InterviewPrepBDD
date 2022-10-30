@@ -32,6 +32,8 @@ public class LoginSteps implements CommonPage {
         public void verify_the_title_of_the_page () {
             BrowserUtils.assertEquals(BrowserUtils.getDriver().getTitle(), "Interview App");
         }
-    }
+
+
+}
 
 
