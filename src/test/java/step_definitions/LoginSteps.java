@@ -30,6 +30,18 @@ public class LoginSteps implements CommonPage {
         BrowserUtils.click(BrowserUtils.getDriver().findElement(By.xpath(String.format(XPATH_TEMPLATE_BUTTON, logInBtn))));
     }
 
+        public void user_clicks_button (String logInBtn){
+            BrowserUtils.click(BrowserUtils.getDriver().findElement(By.xpath(String.format(XPATH_TEMPLATE_BUTTON,logInBtn))));
+        }
+        @Then("verify the title of the page")
+        public void verify_the_title_of_the_page () {
+            BrowserUtils.assertEquals(BrowserUtils.getDriver().getTitle(), "Interview App");
+        }
+
+
+}
+
+
     @Then("verify the title of the page")
     public void verify_the_title_of_the_page() {
         BrowserUtils.assertEquals(BrowserUtils.getDriver().getTitle(), "Interview App");
