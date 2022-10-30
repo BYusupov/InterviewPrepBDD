@@ -5,17 +5,14 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import utils.BrowserUtils;
 
-public class HomePage {
+import javax.xml.xpath.XPath;
 
-    public HomePage(){
+public class SoftSkillsPage {
+    public SoftSkillsPage(){
         PageFactory.initElements(BrowserUtils.getDriver(), this);
     }
-
-    @FindBy(id = "sample")
-    public WebElement sampleElement;
-
-    @FindBy(id = "inputArea1")
-    public WebElement inputField;
-
-
+    @FindBy(xpath ="//input[@name='search']")
+    public WebElement searchbox;
+    @FindBy(xpath ="//button[@type='submit']")
+    public WebElement submit;
 }
