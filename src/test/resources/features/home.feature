@@ -1,4 +1,5 @@
 
+
 @InterviewAdds
 Feature: Home page tests
   Background:
@@ -51,6 +52,7 @@ Feature: Home page tests
       | Coding        |
       | Soft skills   |
       | New Dashboard |
+
 
 
 
