@@ -14,4 +14,18 @@ public class HomePage {
     @FindBy(id = "sample")
     public WebElement sampleElement;
 
+
+
+    @FindBy(xpath = "(//button[@class='btn btn-success badge-pill newbtn mb-3'])[2]")
+    public WebElement dontBtn;
+
+    @FindBy(id = "inputArea1")
+    public WebElement doInput;
+
+    @FindBy(id = "inputArea2")
+    public WebElement dontInput;
+
+    @FindBy(xpath = "(//button[text()='Enter'])[2]")
+    public WebElement enterDontBtn;
+
 }
