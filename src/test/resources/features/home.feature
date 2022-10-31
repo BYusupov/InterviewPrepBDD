@@ -8,11 +8,14 @@ Given User opens Url
     And user clicks "Login" button
 
 
+<<<<<<< HEAD
+=======
   @USIN-9
   Scenario: There should be a sign out button that takes me back to Login page
     When user clicks "Sign out" button
 
 
+>>>>>>> master
   @USIN-4 @regression
   Scenario Outline: Do's and Don't statement should only take letters and number
     And User clicks on a button "Add do "
@@ -40,35 +43,6 @@ Given User opens Url
       | symbols     |
       | Team#@ test |
       | && test     |
-
-  @USIN-5 @smoke @regression
-  Scenario: Add a question in dashboards
-    When user clicks "Add do " button
-    When user adds question "coding"
-    When user clicks "Enter" button
-    Then verify question "coding" is displayed
-
-  @USIN-5a @smoke @regression
-  Scenario: Add a question1 in dashboards
-    When user clicks "Add do " button
-    When user adds question "coding1"
-    When user clicks "Enter" button
-    Then verify question "coding1" is displayed
-
-  @USIN-5b @smoke @regression
-  Scenario: Add a question2 in dashboards
-    When user clicks "Add do " button
-    When user adds question "@coding1"
-    When user clicks "Enter" button
-    Then verify question "@coding1" is displayed
-
-
-#  @USIN-6 @smoke @regression
-#  Scenario: Edit or delete a question in dashboards
-#    When user clicks "Add do " button
-#    When user adds question "coding"
-#    When user clicks "Enter" button
-#    Then verify question "coding" is displayed
 
 
 

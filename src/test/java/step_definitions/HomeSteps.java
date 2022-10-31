@@ -21,18 +21,12 @@ public class HomeSteps implements CommonPage {
         page = new HomePage();
         loginPage = new LoginPage();
     }
+<<<<<<< HEAD
+=======
+
+>>>>>>> master
 
 
-    @When("user adds question {string}")
-    public void user_adds_question(String input) {
-        BrowserUtils.sendKeys(page.inputField, input);
-    }
-
-    @Then("verify question {string} is displayed")
-    public void verifyQuestionIsDisplayed(String question) {
-        BrowserUtils.isDisplayed(BrowserUtils.getDriver().findElement(By.xpath(String.format(XPATH_TEMPLATE_TEXT, question))));
-
-    }
 
     @Then("Verify link text {string} is displayed")
     public void verifyLinkTextIsDisplayed(String dashboardBtns) {
@@ -79,6 +73,7 @@ public class HomeSteps implements CommonPage {
         BrowserUtils.assertEquals(BrowserUtils.getDriver().findElement(By.xpath(String.format(XPATH_TEMPLATE_TEXT, symbols))).getText(),expected);
 
     }
+
 }
 
 
