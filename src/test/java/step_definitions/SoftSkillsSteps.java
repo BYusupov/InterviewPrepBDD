@@ -22,12 +22,10 @@ public class SoftSkillsSteps implements CommonPage {
         BrowserUtils.click(page.submit);
     }
 
-
     @And("verify the criteria {string} is no more than {int} chars")
     public void verifyTheCriteriaIsNoMoreThanChars(String word, int numberOfChars) {
 
         Assert.assertTrue(word.length() <= numberOfChars);
-
     }
 
     @And("user clicks on {string} button and should bring back all questions")
