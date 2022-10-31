@@ -20,22 +20,7 @@ public class ManageAccessSteps implements CommonPage {
         page = new ManageAccessPage();
     }
 
-    @Given("Admin User opens URL")
-    public void adminUserOpensUrl() {
-        BrowserUtils.getDriver();
-    }
 
-    @And("user clicks {string} button")
-    public void userClicksButton(String button) {
-        BrowserUtils.click(BrowserUtils.getDriver().findElement(
-                By.xpath(String.format(XPATH_TEMPLATE_TEXT_CONTAINS, button))));
-    }
-
-    @Then("I click {string} button")
-    public void iClickButton(String button) {
-        BrowserUtils.click(BrowserUtils.getDriver().findElement(
-                By.xpath(String.format(XPATH_TEMPLATE_TEXT_CONTAINS, button))));
-    }
     @Then("Verify following options are displayed:")
     public void verifyFollowingOptionsAreDisplayed(List<String> dataTable) {
         for(String each: dataTable){

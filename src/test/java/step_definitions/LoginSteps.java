@@ -1,9 +1,7 @@
 package step_definitions;
 
-<<<<<<< HEAD
 import io.cucumber.java.en.And;
-=======
->>>>>>> f3ccf6762338101c434dcdd9dc0f50db82353b37
+
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
@@ -31,7 +29,6 @@ public class LoginSteps implements CommonPage {
         BrowserUtils.sendKeys(BrowserUtils.getDriver().findElement(By.xpath(String.format(XPATH_TEMPLATE_INPUT_FIELD, placeHolder))), value);
     }
 
-<<<<<<< HEAD
 
     @When("user clicks {string} button")
     public void user_clicks_button(String logInBtn) {
@@ -42,18 +39,7 @@ public class LoginSteps implements CommonPage {
     public void verify_the_title_of_the_page() {
         BrowserUtils.assertEquals(BrowserUtils.getDriver().getTitle(), "Interview App");
     }
-=======
-    @When("user clicks {string} button")
-        public void user_clicks_button (String logInBtn){
-            BrowserUtils.click(BrowserUtils.getDriver().findElement(By.xpath(String.format(XPATH_TEMPLATE_BUTTON,logInBtn))));
-        }
-        @Then("verify the title of the page")
-        public void verify_the_title_of_the_page () {
-            BrowserUtils.assertEquals(BrowserUtils.getDriver().getTitle(), "Interview App");
-        }
 
-}
->>>>>>> f3ccf6762338101c434dcdd9dc0f50db82353b37
 
 
 }
