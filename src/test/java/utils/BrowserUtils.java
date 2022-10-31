@@ -15,6 +15,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.net.MalformedURLException;
 import java.net.URL;
+import java.util.List;
 import java.util.concurrent.TimeUnit;
 
 public class BrowserUtils {
@@ -184,6 +185,16 @@ public class BrowserUtils {
         select.selectByVisibleText(text);
     }
 
-
+    public static boolean isClickable(WebElement element) {
+        moveIntoView(element);
+        highlightElement(element);
+        try{
+            waitForElementClickability(element);
+            return true;
+        }
+        catch (Exception exception){
+            return false;
+        }
+    }
 
 }
