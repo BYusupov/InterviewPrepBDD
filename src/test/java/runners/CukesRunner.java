@@ -16,13 +16,7 @@ import org.junit.runner.RunWith;
         glue = "step_definitions",
         stepNotifications = true,
         dryRun = false
-<<<<<<< HEAD
-        ,tags = "@USIN-5"
-=======
-
-        ,tags = "@regression"
-
->>>>>>> master
+        ,tags = "@USIN-14"
 
 )
 public class CukesRunner {

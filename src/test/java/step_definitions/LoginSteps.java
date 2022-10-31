@@ -1,9 +1,4 @@
 package step_definitions;
-
-<<<<<<< HEAD
-=======
-
->>>>>>> master
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
@@ -34,7 +29,7 @@ public class LoginSteps implements CommonPage {
 
     @When("user clicks {string} button")
     public void user_clicks_button(String Btn) {
-        BrowserUtils.click(BrowserUtils.getDriver().findElement(By.xpath(String.format(XPATH_TEMPLATE_BUTTON, Btn))));
+        BrowserUtils.click(BrowserUtils.getDriver().findElement(By.xpath(String.format(XPATH_TEMPLATE_TEXT_CONTAINS, Btn))));
 
     }
 
@@ -45,15 +40,3 @@ public class LoginSteps implements CommonPage {
     }
 
 }
-
-
-
-
-
-
-<<<<<<< HEAD
-=======
-
-
-
->>>>>>> master
