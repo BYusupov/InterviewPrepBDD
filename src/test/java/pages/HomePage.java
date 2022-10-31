@@ -14,8 +14,4 @@ public class HomePage {
     @FindBy(id = "sample")
     public WebElement sampleElement;
 
-    @FindBy(id = "inputArea1")
-    public WebElement inputField;
-
-
 }
