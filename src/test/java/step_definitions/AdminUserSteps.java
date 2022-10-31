@@ -1,39 +1,23 @@
 package step_definitions;
 
 
-import io.cucumber.java.en.And;
-import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
-import org.junit.Assert;
 import org.openqa.selenium.By;
-import org.openqa.selenium.WebElement;
-
 import pages.AdminUserPage;
 import pages.CommonPage;
-import pages.LoginPage;
 import utils.BrowserUtils;
 
-
-import java.util.List;
 import java.util.Map;
-
 
 public class AdminUserSteps implements CommonPage {
 
     AdminUserPage page;
 
-    public AdminUserSteps(){
-    }
-
-
-    @Then("verify {string} button is visible")
-    public void verifyButtonIsVisible(String button) {
-
+    public AdminUserSteps() {
 
         page = new AdminUserPage();
     }
-
 
     @Then("Verify {string} button is displayed")
     public void verifyButtonIsDisplayed(String button) {
@@ -56,36 +40,19 @@ public class AdminUserSteps implements CommonPage {
                 By.xpath(String.format(XPATH_TEMPLATE_TEXT_CONTAINS, button))));
     }
 
-    @Then("Verify following input fields are displayed:")
-    public void verifyFollowingInputFieldsAreDisplayed(List<String> dataTable) {
-        for(String each: dataTable){
-//            if (each.equalsIgnoreCase("role")) {
-//                BrowserUtils.isDisplayed(page.roleInput);
-//            } else if (each.equalsIgnoreCase("batch")) {
-//                BrowserUtils.isDisplayed(page.batchInput);
-//            } else {
-//                BrowserUtils.isDisplayed(BrowserUtils.getDriver().findElement(
-//                        By.xpath(String.format(XPATH_TEMPLATE_INPUT_FIELD, each))));
-//            }
-            Assert.assertTrue(BrowserUtils.getDriver().findElement(By.xpath(String.format(XPATH_TEMPLATE_INPUT_FIELD, each))).getText(),true);
-        }
-    }
 
     @Then("I fill out new user form with following info:")
     public void iFillOutNewUserFormWithFollowingInfo(Map<String, String> map) {
         for (String key : map.keySet()) {
-            if (key.equalsIgnoreCase("role")) {
-                BrowserUtils.selectByVisibleText(page.roleInput, map.get(key));
-            } if (key.equalsIgnoreCase("batch")) {
+            if (key.equalsIgnoreCase("batch")) {
                 BrowserUtils.selectByVisibleText(page.batchInput, map.get(key));
+            } else if (key.equalsIgnoreCase("role")) {
+                BrowserUtils.selectByVisibleText(page.roleInput, map.get(key));
             } else {
-                BrowserUtils.sendKeys(BrowserUtils.getDriver().findElement(By.xpath(
-                        String.format(XPATH_TEMPLATE_INPUT_FIELD, key)
-                )), map.get(key));
+                BrowserUtils.sendKeys(BrowserUtils.getDriver().findElement(By.xpath(String.format(XPATH_TEMPLATE_INPUT_FIELD, key))), map.get(key));
             }
         }
     }
-
 
     @Then("Verify Edit button {string} is clickable")
     public void verifyEditButtonIsClickable(String button) {
@@ -101,18 +68,11 @@ public class AdminUserSteps implements CommonPage {
                         By.xpath(String.format(XPATH_TEMPLATE_CLASS_CONTAINS, button))));
     }
 
-
-    @Then("Verify following {string} are displayed:")
-    public void verifyFollowingAreDisplayed(String fields) {
-      BrowserUtils.isDisplayed(BrowserUtils.getDriver().findElement(By.xpath(String.format(XPATH_TEMPLATE_INPUT_FIELD, fields))));
-
-
-    }
-
     @Then("Verify following {string} and {string} are displayed:")
     public void verifyFollowingAndAreDisplayed(String input, String select) {
         BrowserUtils.isDisplayed(BrowserUtils.getDriver().findElement(By.xpath(String.format(XPATH_TEMPLATE_INPUT_FIELD, input))));
         BrowserUtils.isDisplayed(BrowserUtils.getDriver().findElement(By.id(select)));
 
     }
+
 }

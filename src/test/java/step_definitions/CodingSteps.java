@@ -13,10 +13,6 @@ public class CodingSteps implements CommonPage {
     public CodingSteps() {
         this.page = new CodingPage();
     }
-    @When("user adds question {string} as {string}")
-    public void userAddsQuestionAs(String value, String placeholder) {
-        BrowserUtils.sendKeys(BrowserUtils.getDriver().findElement(By.xpath(String.format(XPATH_TEMPLATE_TEXTAREA_FIELD, placeholder))), value);
-    }
 
     @Then("verify question {string} is displayed")
     public void verifyQuestionIsDisplayed(String question) {
