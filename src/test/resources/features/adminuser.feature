@@ -43,6 +43,12 @@ Feature: Admin User page test
       | Role       | Student      |
       | Batch      | 6            |
     And I click "Add User" button
+    Then I verify that added user is displayed with following info:
+      | Jon          |
+      | Snow         |
+      | snow@got.com |
+      | Student      |
+      | 6            |
 
 
 

@@ -105,4 +105,14 @@ public class AdminUserSteps implements CommonPage {
     }
 
 
+    @Then("I verify that added user is displayed with following info:")
+    public void iVerifyThatAddedUserIsDisplayedWithFollowingInfo(List<String> names) {
+        for(String each: names){
+            BrowserUtils.isDisplayed(
+                    BrowserUtils.getDriver().findElement(
+                            By.xpath(String.format(XPATH_TEMPLATE_TEXT, each))
+                    )
+            );
+        }
+    }
 }
