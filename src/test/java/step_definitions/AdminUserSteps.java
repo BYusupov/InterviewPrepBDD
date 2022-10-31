@@ -1,5 +1,6 @@
 package step_definitions;
 
+import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
@@ -27,10 +28,16 @@ public class AdminUserSteps implements CommonPage {
         BrowserUtils.getDriver();
     }
 
-    @When("admin user enters {string} as {string}")
+    @When("Admin User enters {string} as {string}")
     public void adminUserEntersAs(String value, String placeHolder) {
         BrowserUtils.sendKeys(BrowserUtils.getDriver().findElement(By.xpath
                 (String.format(XPATH_TEMPLATE_INPUT_FIELD, placeHolder))), value);
+    }
+
+    @And("Admin User clicks {string} button")
+    public void adminUserClicksButton(String logInBtn) {
+        BrowserUtils.click(BrowserUtils.getDriver().findElement(
+                By.xpath(String.format(XPATH_TEMPLATE_BUTTON, logInBtn))));
     }
 
     @Then("Verify {string} button is displayed")
@@ -80,6 +87,21 @@ public class AdminUserSteps implements CommonPage {
                 )), map.get(key));
             }
         }
+    }
+
+
+    @Then("Verify Edit button {string} is clickable")
+    public void verifyEditButtonIsClickable(String button) {
+        BrowserUtils.isClickable(
+                BrowserUtils.getDriver().findElement(
+                        By.xpath(String.format(XPATH_TEMPLATE_CLASS_CONTAINS, button))));
+    }
+
+    @Then("Verify Delete button {string} is clickable")
+    public void verifyDeleteButtonIsClickable(String button) {
+        BrowserUtils.isClickable(
+                BrowserUtils.getDriver().findElement(
+                        By.xpath(String.format(XPATH_TEMPLATE_CLASS_CONTAINS, button))));
     }
 
 
