@@ -1,5 +1,8 @@
 package step_definitions;
 
+
+import io.cucumber.java.en.And;
+
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
@@ -12,8 +15,9 @@ import utils.BrowserUtils;
 
 public class LoginSteps implements CommonPage {
     LoginPage page;
-    public LoginSteps(){
-    page = new LoginPage();
+
+    public LoginSteps() {
+        page = new LoginPage();
     }
 
 
@@ -23,10 +27,16 @@ public class LoginSteps implements CommonPage {
     }
     @When("user enters {string} as {string}")
     public void user_enters_as(String value, String placeHolder) {
-        BrowserUtils.sendKeys(BrowserUtils.getDriver().findElement(By.xpath(String.format(XPATH_TEMPLATE_INPUT_FIELD, placeHolder))),value);
+        BrowserUtils.sendKeys(BrowserUtils.getDriver().findElement(By.xpath(String.format(XPATH_TEMPLATE_INPUT_FIELD, placeHolder))), value);
     }
 
+
     @When("user clicks {string} button")
+    public void user_clicks_button(String logInBtn) {
+        BrowserUtils.click(BrowserUtils.getDriver().findElement(By.xpath(String.format(XPATH_TEMPLATE_BUTTON, logInBtn))));
+
+    }
+
         public void user_clicks_button (String logInBtn){
             BrowserUtils.click(BrowserUtils.getDriver().findElement(By.xpath(String.format(XPATH_TEMPLATE_BUTTON,logInBtn))));
         }
@@ -35,6 +45,31 @@ public class LoginSteps implements CommonPage {
             BrowserUtils.assertEquals(BrowserUtils.getDriver().getTitle(), "Interview App");
         }
 
+
 }
+
+
+    @Then("verify the title of the page")
+    public void verify_the_title_of_the_page() {
+        BrowserUtils.assertEquals(BrowserUtils.getDriver().getTitle(), "Interview App");
+    }
+
+}
+
+
+
+
+
+    }
+
+    @Then("verify the title of the page")
+    public void verify_the_title_of_the_page() {
+        BrowserUtils.assertEquals(BrowserUtils.getDriver().getTitle(), "Interview App");
+    }
+
+
+
+}
+
 
 

@@ -22,4 +22,15 @@ Feature: LogIn page test
     Then verify the title of the page
 
 
+  @USIN-17
+  Scenario Outline: Verify "show all" button reset view and display all users
+    When Verify button "<show all>" is displayed
+    Then I click link text "<show all>"
+    Examples:
+      | linkText      | URL                                        |
+      | Sauce Demo    | https://interview-prep-test.herokuapp.com  |
+
+
+
+
 
