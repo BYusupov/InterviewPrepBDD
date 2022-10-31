@@ -23,12 +23,14 @@ public class SoftSkillsSteps implements CommonPage {
     @And("user should be able to enter {string} in search and get related question")
     public void userShouldBeAbleToEnterInAndGetRelatedQuestion(String word) {
         BrowserUtils.sendKeys(page.searchbox, word);
+        Assert.assertTrue(page.searchbox.getText().length()<=40);
+        System.out.println(page.searchbox.getText().length());
         BrowserUtils.click(page.submit);
     }
 
     @And("verify the criteria is no more than {int} chars")
     public void verify_the_criteria_is_no_more_than_chars(Integer int1) {
-        Assert.assertTrue(page.searchbox.getText()<=);
+        Assert.assertTrue(page.searchbox.getText().length()<=40);
     }
 
     @And("Show all button should bring back all questions")

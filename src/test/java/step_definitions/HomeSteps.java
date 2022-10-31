@@ -20,10 +20,7 @@ public class HomeSteps implements CommonPage {
         page = new HomePage();
         loginPage = new LoginPage();
     }
-    @Given("User opens Url")
-    public void userOpensUrl() {
-        BrowserUtils.getDriver();
-    }
+
 
     @When("user adds question {string}")
     public void user_adds_question(String input) {
