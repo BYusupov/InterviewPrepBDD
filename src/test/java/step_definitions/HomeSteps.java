@@ -22,6 +22,12 @@ public class HomeSteps implements CommonPage {
     }
 
 
+    @Given("User opens Url")
+    public void userOpensUrl() {
+        BrowserUtils.getDriver();
+    }
+
+
     @When("user adds question {string}")
     public void user_adds_question(String input) {
         BrowserUtils.sendKeys(page.inputField, input);
@@ -34,10 +40,15 @@ public class HomeSteps implements CommonPage {
     }
 
     @Then("Verify link text {string} is displayed")
-    public void verifyLinkTextIsDisplayed(String dashboardBtns){
-            BrowserUtils.isDisplayed(BrowserUtils.getDriver().findElement(
-                    By.xpath(String.format(XPATH_TEMPLATE_BUTTON, dashboardBtns))));
+    public void verifyLinkTextIsDisplayed(String dashboardBtns) {
+        BrowserUtils.isDisplayed(BrowserUtils.getDriver().findElement(
+                By.xpath(String.format(XPATH_TEMPLATE_BUTTON, dashboardBtns))));
 
+    }
+
+    @Then("user clicks on {string} button")
+    public void user_clicks_on_button(String Signout) {
+        BrowserUtils.click(BrowserUtils.getDriver().findElement(By.xpath(String.format(XPATH_TEMPLATE_BUTTON, Signout))));
     }
     @When("User clicks on {string} button")
     public void userClicksOnButton(String string) {
