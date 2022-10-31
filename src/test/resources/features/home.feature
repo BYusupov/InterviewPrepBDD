@@ -1,4 +1,4 @@
-<<<<<<< HEAD
+@regression
 Feature: Home page tests
 Given User opens Url
   Background:
@@ -6,24 +6,12 @@ Given User opens Url
     When user enters "test@yahoo.com" as "Enter Username"
     And user enters "test123" as "Enter Password"
     And user clicks "Login" button
-=======
 
-@InterviewAdds
-
-Feature: Home page tests
-  Given User opens URL
-  Given user clicks "Login" button
 
   @USIN-9
   Scenario: There should be a sign out button that takes me back to Login page
     When user clicks "Sign out" button
 
-
-  Background:
-    Given User opens Url
-    When user enters "test@yahoo.com" as "Enter Username"
-    And user enters "test123" as "Enter Password"
-    And user clicks "Login" button
 
   @USIN-4 @regression
   Scenario Outline: Do's and Don't statement should only take letters and number
@@ -82,7 +70,7 @@ Feature: Home page tests
 #    When user clicks "Enter" button
 #    Then verify question "coding" is displayed
 
->>>>>>> master
+
 
   @USIN-9
   Scenario: There should be a sign out button that goes back to Login page

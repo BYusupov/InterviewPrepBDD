@@ -5,6 +5,7 @@ import io.cucumber.java.en.Given;
 
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
+import org.junit.Assert;
 import org.openqa.selenium.By;
 import pages.CommonPage;
 import pages.HomePage;
@@ -19,12 +20,6 @@ public class HomeSteps implements CommonPage {
     public HomeSteps() {
         page = new HomePage();
         loginPage = new LoginPage();
-    }
-
-
-    @Given("User opens Url")
-    public void userOpensUrl() {
-        BrowserUtils.getDriver();
     }
 
 
@@ -60,7 +55,6 @@ public class HomeSteps implements CommonPage {
         BrowserUtils.sendKeys(page.doInput, doTxt);
     }
 
-}
     @Then("User input text {string}")
     public void userInputText(String dontTxt) {
         BrowserUtils.sendKeys(page.dontInput, dontTxt);
@@ -82,8 +76,8 @@ public class HomeSteps implements CommonPage {
     @Then("Verify {string} is not displayed")
     public void verifyIsNotDisplayed(String symbols) {
         String expected = "";
-        BrowserUtils.assertEquals(expected, BrowserUtils.getDriver().findElement(
-                By.xpath(String.format(XPATH_TEMPLATE_TEXT, symbols))).getText());
+        BrowserUtils.assertEquals(BrowserUtils.getDriver().findElement(By.xpath(String.format(XPATH_TEMPLATE_TEXT, symbols))).getText(),expected);
+
     }
 }
 

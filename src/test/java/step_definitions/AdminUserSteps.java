@@ -25,11 +25,6 @@ public class AdminUserSteps implements CommonPage {
     public AdminUserSteps(){
     }
 
-    @When("user enters {string} as {string}")
-    public void adminUserEntersAs(String value, String placeHolder) {
-        BrowserUtils.sendKeys(BrowserUtils.getDriver().findElement(By.xpath(String.format(XPATH_TEMPLATE_INPUT_FIELD, placeHolder))),value);
-    }
-
 
     @Then("verify {string} button is visible")
     public void verifyButtonIsVisible(String button) {
@@ -38,22 +33,6 @@ public class AdminUserSteps implements CommonPage {
         page = new AdminUserPage();
     }
 
-    @Given("User opens URL")
-    public void adminUserOpensUrl() {
-        BrowserUtils.getDriver();
-    }
-
-    @When("Admin User enters {string} as {string}")
-    public void adminUserEntersAs(String value, String placeHolder) {
-        BrowserUtils.sendKeys(BrowserUtils.getDriver().findElement(By.xpath
-                (String.format(XPATH_TEMPLATE_INPUT_FIELD, placeHolder))), value);
-    }
-
-    @And("Admin User clicks {string} button")
-    public void adminUserClicksButton(String logInBtn) {
-        BrowserUtils.click(BrowserUtils.getDriver().findElement(
-                By.xpath(String.format(XPATH_TEMPLATE_BUTTON, logInBtn))));
-    }
 
     @Then("Verify {string} button is displayed")
     public void verifyButtonIsDisplayed(String button) {

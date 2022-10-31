@@ -17,7 +17,7 @@ import org.junit.runner.RunWith;
         stepNotifications = true,
         dryRun = false
 
-        ,tags = "@USIN-17"
+        ,tags = "@regression"
 
 
 )

@@ -16,11 +16,6 @@ public class SoftSkillsSteps implements CommonPage {
     }
 
 
-    @And("user clicks on {string} button")
-    public void user_clicks_on_button(String Softskills) {
-        BrowserUtils.click(BrowserUtils.getDriver().findElement(By.xpath(String.format(XPATH_TEMPLATE_BUTTON, Softskills))));
-    }
-
     @And("user should be able to enter {string} in search and get related question")
     public void userShouldBeAbleToEnterInAndGetRelatedQuestion(String word) {
         BrowserUtils.sendKeys(page.searchbox, word);
