@@ -14,10 +14,10 @@ public class AdminUserSteps implements CommonPage {
 
     AdminUserPage page;
 
-    public AdminUserSteps() {
-
+    public AdminUserSteps(){
         page = new AdminUserPage();
     }
+
 
     @Then("Verify {string} button is displayed")
     public void verifyButtonIsDisplayed(String button) {
@@ -44,10 +44,11 @@ public class AdminUserSteps implements CommonPage {
     @Then("I fill out new user form with following info:")
     public void iFillOutNewUserFormWithFollowingInfo(Map<String, String> map) {
         for (String key : map.keySet()) {
-            if (key.equalsIgnoreCase("batch")) {
-                BrowserUtils.selectByVisibleText(page.batchInput, map.get(key));
-            } else if (key.equalsIgnoreCase("role")) {
+
+            if (key.equalsIgnoreCase("role")) {
                 BrowserUtils.selectByVisibleText(page.roleInput, map.get(key));
+            } else if (key.equalsIgnoreCase("batch")) {
+                BrowserUtils.selectByVisibleText(page.batchInput, map.get(key));
             } else {
                 BrowserUtils.sendKeys(BrowserUtils.getDriver().findElement(By.xpath(String.format(XPATH_TEMPLATE_INPUT_FIELD, key))), map.get(key));
             }

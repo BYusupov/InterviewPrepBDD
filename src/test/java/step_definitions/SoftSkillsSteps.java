@@ -26,7 +26,6 @@ public class SoftSkillsSteps implements CommonPage {
     public void verifyTheCriteriaIsNoMoreThanChars(String word, int numberOfChars) {
 
         Assert.assertTrue(word.length() <= numberOfChars);
-
     }
 
     @And("user clicks on {string} button and should bring back all questions")
