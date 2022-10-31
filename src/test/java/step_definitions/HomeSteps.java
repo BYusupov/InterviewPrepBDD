@@ -5,6 +5,7 @@ import io.cucumber.java.en.Given;
 
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
+import org.junit.Assert;
 import org.openqa.selenium.By;
 import pages.CommonPage;
 import pages.HomePage;
@@ -20,14 +21,23 @@ public class HomeSteps implements CommonPage {
         page = new HomePage();
         loginPage = new LoginPage();
     }
+<<<<<<< HEAD
+=======
+
+>>>>>>> master
 
 
 
     @Then("Verify link text {string} is displayed")
-    public void verifyLinkTextIsDisplayed(String dashboardBtns){
-            BrowserUtils.isDisplayed(BrowserUtils.getDriver().findElement(
-                    By.xpath(String.format(XPATH_TEMPLATE_BUTTON, dashboardBtns))));
+    public void verifyLinkTextIsDisplayed(String dashboardBtns) {
+        BrowserUtils.isDisplayed(BrowserUtils.getDriver().findElement(
+                By.xpath(String.format(XPATH_TEMPLATE_BUTTON, dashboardBtns))));
 
+    }
+
+    @Then("user clicks on {string} button")
+    public void user_clicks_on_button(String Signout) {
+        BrowserUtils.click(BrowserUtils.getDriver().findElement(By.xpath(String.format(XPATH_TEMPLATE_BUTTON, Signout))));
     }
     @When("User clicks on {string} button")
     public void userClicksOnButton(String string) {
@@ -60,9 +70,10 @@ public class HomeSteps implements CommonPage {
     @Then("Verify {string} is not displayed")
     public void verifyIsNotDisplayed(String symbols) {
         String expected = "";
-        BrowserUtils.assertEquals(expected, BrowserUtils.getDriver().findElement(
-                By.xpath(String.format(XPATH_TEMPLATE_TEXT, symbols))).getText());
+        BrowserUtils.assertEquals(BrowserUtils.getDriver().findElement(By.xpath(String.format(XPATH_TEMPLATE_TEXT, symbols))).getText(),expected);
+
     }
 
 }
+
 

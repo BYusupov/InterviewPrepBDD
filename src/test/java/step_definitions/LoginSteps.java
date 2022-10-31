@@ -1,5 +1,9 @@
 package step_definitions;
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> master
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
@@ -7,7 +11,6 @@ import org.openqa.selenium.By;
 import pages.CommonPage;
 import pages.LoginPage;
 import utils.BrowserUtils;
-
 
 
 public class LoginSteps implements CommonPage {
@@ -30,9 +33,11 @@ public class LoginSteps implements CommonPage {
 
 
     @When("user clicks {string} button")
-    public void user_clicks_button(String logInBtn) {
-        BrowserUtils.click(BrowserUtils.getDriver().findElement(By.xpath(String.format(XPATH_TEMPLATE_BUTTON, logInBtn))));
+    public void user_clicks_button(String Btn) {
+        BrowserUtils.click(BrowserUtils.getDriver().findElement(By.xpath(String.format(XPATH_TEMPLATE_BUTTON, Btn))));
+
     }
+
 
     @Then("verify the title of the page")
     public void verify_the_title_of_the_page() {
@@ -46,3 +51,9 @@ public class LoginSteps implements CommonPage {
 
 
 
+<<<<<<< HEAD
+=======
+
+
+
+>>>>>>> master

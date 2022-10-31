@@ -1,4 +1,4 @@
-@soft-skills
+@soft-skills @regression
 Feature: soft skills page feature
 
   Background: navigate to home page
@@ -9,8 +9,13 @@ Feature: soft skills page feature
 
 
   @USIN-8 @regression
-    Scenario: soft skills filter
+    Scenario Outline: soft skills filter
     And user clicks on "Soft skills" button
-    And user should be able to enter "git" in search and get related question
-    And verify the criteria is no more than 40 chars
-    And Show all button should bring back all questions
+    And user should be able to enter "<word>" in search and get related question
+    And verify the criteria "<word>" is no more than 40 chars
+    And user clicks on "Show all" button and should bring back all questions
+
+    Examples:
+    |word|
+    |Git|
+

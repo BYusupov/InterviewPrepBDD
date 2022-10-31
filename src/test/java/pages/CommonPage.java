@@ -8,5 +8,7 @@ public interface CommonPage {
     String XPATH_TEMPLATE_INPUT_FIELD = "//input[@placeholder='%s']";
     String XPATH_TEMPLATE_TEXTAREA_FIELD = "//textarea[@placeholder='%s']";
 
+    String XPATH_TEMPLATE_CLASS_CONTAINS = "//*[contains(@class, '%s')]";
+
 
 }
