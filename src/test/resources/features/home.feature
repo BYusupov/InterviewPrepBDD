@@ -8,14 +8,11 @@ Given User opens Url
     And user clicks "Login" button
 
 
-<<<<<<< HEAD
-=======
   @USIN-9
   Scenario: There should be a sign out button that takes me back to Login page
     When user clicks "Sign out" button
 
 
->>>>>>> master
   @USIN-4 @regression
   Scenario Outline: Do's and Don't statement should only take letters and number
     And User clicks on a button "Add do "
