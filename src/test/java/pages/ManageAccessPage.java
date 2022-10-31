@@ -10,6 +10,8 @@ public class ManageAccessPage {
 
         PageFactory.initElements(BrowserUtils.getDriver(), this);
     }
+
+
     @FindBy(id = "Select-filter")
     public WebElement selectFilter;
 }
