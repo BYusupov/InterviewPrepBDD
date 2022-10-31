@@ -1,3 +1,4 @@
+@regression
 Feature:
 
   Background: Navigate to home  page

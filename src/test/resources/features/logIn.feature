@@ -1,3 +1,4 @@
+@regression
 Feature: LogIn page test
 
   Background:

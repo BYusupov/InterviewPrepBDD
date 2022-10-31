@@ -1,25 +1,12 @@
-
+@regression
 Feature: Admin User page page test
-Given Admin User opens Url
 
-  @USIN-10 @smoke @regression
-  Scenario Outline: Admin logs in
-    When admin user enters "<Username>" as "Enter Username"
-    And admin user enters "<Password>" as "Enter Password"
-    And user clicks "Login" button
-    Then verify "Manage Access" button is visible
-
-    Examples:
-      | Username       | Password |
-      | admin@yahoo.com | admin123  |
-
-Feature: Admin User page test
 
   Background: Admin User logs in
-    Given Admin User opens URL
-    When Admin User enters "admin@yahoo.com" as "Enter Username"
-    And Admin User enters "admin123" as "Enter Password"
-    And Admin User clicks "Login" button
+    Given User opens Url
+    When user enters "admin@yahoo.com" as "Enter Username"
+    And user enters "admin123" as "Enter Password"
+    And user clicks "Login" button
 
   @USIN-10 @positive @smoke
   Scenario: Verify "Manage Access" button is displayed

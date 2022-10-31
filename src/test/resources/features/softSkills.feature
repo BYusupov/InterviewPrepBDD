@@ -1,4 +1,4 @@
-@soft-skills
+@soft-skills @regression
 Feature: soft skills page feature
 
   Background: navigate to home page
