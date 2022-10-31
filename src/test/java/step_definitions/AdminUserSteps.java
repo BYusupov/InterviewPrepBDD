@@ -1,29 +1,44 @@
 package step_definitions;
 
+
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
+
 import pages.AdminUserPage;
 import pages.CommonPage;
 import pages.LoginPage;
 import utils.BrowserUtils;
 
+
 import java.util.List;
 import java.util.Map;
+
 
 public class AdminUserSteps implements CommonPage {
 
     AdminUserPage page;
 
     public AdminUserSteps(){
+    }
+
+    @When("user enters {string} as {string}")
+    public void adminUserEntersAs(String value, String placeHolder) {
+        BrowserUtils.sendKeys(BrowserUtils.getDriver().findElement(By.xpath(String.format(XPATH_TEMPLATE_INPUT_FIELD, placeHolder))),value);
+    }
+
+
+    @Then("verify {string} button is visible")
+    public void verifyButtonIsVisible(String button) {
+
 
         page = new AdminUserPage();
     }
 
-    @Given("Admin User opens URL")
+    @Given("User opens URL")
     public void adminUserOpensUrl() {
         BrowserUtils.getDriver();
     }
@@ -42,6 +57,7 @@ public class AdminUserSteps implements CommonPage {
 
     @Then("Verify {string} button is displayed")
     public void verifyButtonIsDisplayed(String button) {
+
         BrowserUtils.isDisplayed(
                 BrowserUtils.getDriver().findElement(
                         By.xpath(String.format(XPATH_TEMPLATE_TEXT, button)))
@@ -103,6 +119,7 @@ public class AdminUserSteps implements CommonPage {
                 BrowserUtils.getDriver().findElement(
                         By.xpath(String.format(XPATH_TEMPLATE_CLASS_CONTAINS, button))));
     }
+
 
 
 }

@@ -49,6 +49,7 @@ public class HomeSteps implements CommonPage {
         BrowserUtils.sendKeys(page.doInput, doTxt);
     }
 
+}
     @Then("User input text {string}")
     public void userInputText(String dontTxt) {
         BrowserUtils.sendKeys(page.dontInput, dontTxt);
@@ -74,4 +75,5 @@ public class HomeSteps implements CommonPage {
                 By.xpath(String.format(XPATH_TEMPLATE_TEXT, symbols))).getText());
     }
 }
+
 
