@@ -7,11 +7,6 @@ Given User opens Url
     And user enters "test123" as "Enter Password"
     And user clicks "Login" button
 
-
-<<<<<<< HEAD
-=======
-
->>>>>>> master
   @USIN-9
   Scenario: There should be a sign out button that takes me back to Login page
     When user clicks "Sign out" button

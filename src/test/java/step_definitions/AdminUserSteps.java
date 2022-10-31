@@ -24,14 +24,13 @@ public class AdminUserSteps implements CommonPage {
     AdminUserPage page;
 
     public AdminUserSteps(){
+        page = new AdminUserPage();
     }
 
 
     @Then("verify {string} button is visible")
     public void verifyButtonIsVisible(String button) {
 
-
-        page = new AdminUserPage();
     }
 
 
@@ -76,7 +75,7 @@ public class AdminUserSteps implements CommonPage {
         for (String key : map.keySet()) {
             if (key.equalsIgnoreCase("role")) {
                 BrowserUtils.selectByVisibleText(page.roleInput, map.get(key));
-            } if (key.equalsIgnoreCase("batch")) {
+            } else if (key.equalsIgnoreCase("batch")) {
                 BrowserUtils.selectByVisibleText(page.batchInput, map.get(key));
             } else {
                 BrowserUtils.sendKeys(BrowserUtils.getDriver().findElement(By.xpath(
