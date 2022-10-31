@@ -22,11 +22,6 @@ public class HomeSteps implements CommonPage {
     }
 
 
-    @Then("verify question {string} is displayed")
-    public void verifyQuestionIsDisplayed(String question) {
-        BrowserUtils.isDisplayed(BrowserUtils.getDriver().findElement(By.xpath(String.format(XPATH_TEMPLATE_TEXT, question))));
-
-    }
 
     @Then("Verify link text {string} is displayed")
     public void verifyLinkTextIsDisplayed(String dashboardBtns){

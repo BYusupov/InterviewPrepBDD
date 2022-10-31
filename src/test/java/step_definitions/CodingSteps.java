@@ -24,10 +24,4 @@ public class CodingSteps implements CommonPage {
 
     }
 
-    @Then("Verify link text {string} is displayed")
-    public void verifyLinkTextIsDisplayed(String inputTxt){
-        BrowserUtils.assertEquals(BrowserUtils.getDriver().findElement(
-                By.xpath(String.format(XPATH_TEMPLATE_BUTTON, inputTxt))).getText(), "Array reverse");
-
-    }
 }

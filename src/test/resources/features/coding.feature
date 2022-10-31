@@ -1,3 +1,4 @@
+@CodingPage
 Feature: Coding page scenarios
 
   Background:
