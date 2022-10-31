@@ -22,29 +22,30 @@ Feature: Admin User page page test
   @USIN-12 @positive
   Scenario: Add a new dashboard
     When I add a new dashboard "Prep" as "New dashboard"
-    Then I click "Add" button
+    Then user clicks "+ Add" button
     Then Verify "Prep" button is displayed
 
   @USIN-13 @positive
-  Scenario: Admin should see a form in Manage Access page with following fields
-    When I click "Manage Access" button
-    Then Verify following input fields are displayed:
-    | First Name |
-    | Last Name  |
-    | E-mail     |
-    | Role       |
-    | Batch      |
+  Scenario Outline: Admin should see a form in Manage Access page with following fields
+    When user clicks "Manage Access" button
+    Then Verify following "<input fields>" and "<select fields>" are displayed:
+    Examples:
+      | input fields | select fields |
+      | First Name   | Role          |
+      | Last Name    | Batch         |
+      | E-mail       | Batch         |
+
 
   @USIN-14 @positive
   Scenario: Admin should have an option to add a new user in Manage Access Page
-    When I click "Manage Access" button
+    When user clicks "Manage Access" button
     Then I fill out new user form with following info:
       | First Name | Jon          |
       | Last Name  | Snow         |
       | E-mail     | snow@got.com |
       | Role       | Student      |
       | Batch      | 6            |
-    And I click "Add User" button
+    And user clicks "Add User" button
 
 
 

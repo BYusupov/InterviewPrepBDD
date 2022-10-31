@@ -23,22 +23,17 @@ public class SoftSkillsSteps implements CommonPage {
         BrowserUtils.click(page.submit);
     }
 
-<<<<<<< HEAD
-    @And("verify the criteria is no more than {int} chars")
-    public void verify_the_criteria_is_no_more_than_chars(Integer int1) {
-        //Assert.assertTrue(page.searchbox.getText()<=);
-=======
-    @And("verify the criteria {string} is no more than {int} chars")
-    public void verifyTheCriteriaIsNoMoreThanChars(String word, int numberOfChars) {
+        @And("verify the criteria {string} is no more than {int} chars")
+        public void verifyTheCriteriaIsNoMoreThanChars (String word,int numberOfChars){
 
-        Assert.assertTrue(word.length() <= numberOfChars);
->>>>>>> master
+            Assert.assertTrue(word.length() <= numberOfChars);
+
+        }
+
+        @And("user clicks on {string} button and should bring back all questions")
+        public void userClicksOnButtonAndShouldBringBackAllQuestions (String btn){
+            BrowserUtils.click(BrowserUtils.getDriver().findElement(By.xpath(String.format(XPATH_TEMPLATE_BUTTON, btn))));
+
+        }
     }
-
-    @And("user clicks on {string} button and should bring back all questions")
-    public void userClicksOnButtonAndShouldBringBackAllQuestions(String btn) {
-        BrowserUtils.click(BrowserUtils.getDriver().findElement(By.xpath(String.format(XPATH_TEMPLATE_BUTTON,btn))));
-
-    }
-}
 
