@@ -31,13 +31,13 @@ Feature: Coding page scenarios
 
   @USIN-6
   Scenario: Delete dashboard questions
-    And user clicks delete Array reverse question
+    And user clicks delete "String" question
 
   @USIN-6a
   Scenario: Edit dashboard questions
-    And user clicks edit Array reverse of question
+    And user clicks edit "Wha" question
     And user clicks on textbox
     And user deletes existing question
-    And user edits question "String reverse" as "Array reverse"
+    And user edits question "String reverse"
     And user clicks check button
 

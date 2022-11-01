@@ -30,16 +30,16 @@ public class CodingSteps implements CommonPage {
         BrowserUtils.sendKeys(BrowserUtils.getDriver().findElement(By.xpath(String.format(XPATH_TEMPLATE_TEXTAREA_FIELD, placeholder))), value);
     }
 
-    @And("user clicks delete Array reverse question")
-    public void userClicksDeleteArrayReverseQuestion() {
-        BrowserUtils.click(page.deleteBtn);
+    @And("user clicks delete {string} question")
+    public void userClicksDeleteArrayReverseQuestion(String question) {
+        BrowserUtils.click(BrowserUtils.getDriver().findElement(By.xpath(String.format(XPATH_DELETE_BUTTON_WITH_QUESTIONS,question))));
     }
 
 
-    @When("user clicks edit Array reverse of question")
-    public void user_clicks_edit_array_reverse_of_question() {
-        BrowserUtils.click(page.editBtn);
-    }
+//    @When("user clicks edit Array reverse of question")
+//    public void user_clicks_edit_array_reverse_of_question() {
+//        BrowserUtils.click(page.editBtn);
+//    }
 
     @And("user clicks on textbox")
     public void userClicksOnTexbox() {
@@ -53,8 +53,8 @@ public class CodingSteps implements CommonPage {
         page.textBox.sendKeys(Keys.CLEAR);
     }
 
-    @And("user edits question {string} as {string}")
-    public void userEditsQuestionAs(String value, String txt) {
+    @And("user edits question {string}")
+    public void userEditsQuestionAs(String value) {
         BrowserUtils.sendKeys(page.textBox, value);
     }
 
@@ -64,6 +64,10 @@ public class CodingSteps implements CommonPage {
     }
 
 
+    @And("user clicks edit {string} question")
+    public void userClicksEditQuestion(String question) {
+        BrowserUtils.click(BrowserUtils.getDriver().findElement(By.xpath(String.format(XPATH_EDIT_BUTTON_WITH_QUESTIONS,question))));
+    }
 }
 
 
