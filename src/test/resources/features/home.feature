@@ -40,13 +40,6 @@ Given User opens Url
       | Team#@ test |
       | && test     |
 
-
-
-  @USIN-9
-  Scenario: There should be a sign out button that goes back to Login page
-    Then user clicks "Sign out" button
-
-
   @USIN-3 @smoke @regression
   Scenario Outline: Verify dashboard buttons are present
     Then Verify link text "<button>" is displayed

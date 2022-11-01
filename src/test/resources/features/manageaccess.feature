@@ -3,7 +3,7 @@ Feature: Admin User page test
 
   Background: Admin User logs in
     Given  User opens Url
-    When  user enters "admin@yahoo.com" as "Enter Username"
+    When user enters "admin@yahoo.com" as "Enter Username"
     And  user enters "admin123" as "Enter Password"
     And user clicks "Login" button
 
