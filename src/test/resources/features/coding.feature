@@ -36,7 +36,8 @@ Feature: Coding page scenarios
   @USIN-6a
   Scenario: Edit dashboard questions
     And user clicks edit Array reverse of question
-#    And user deletes existing question "Array reverse   "
-    And user edits question "String reverse" as "Array reverse   "
+    And user clicks on texbox
+   And user deletes existing question
+    And user edits question "String reverse" as "Array reverse"
     And user clicks check button
 

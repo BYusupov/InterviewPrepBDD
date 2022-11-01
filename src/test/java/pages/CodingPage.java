@@ -6,17 +6,20 @@ import org.openqa.selenium.support.PageFactory;
 import utils.BrowserUtils;
 
 public class CodingPage {
-    public CodingPage(){
+    public CodingPage() {
         PageFactory.initElements(BrowserUtils.getDriver(), this);
     }
 
-    @FindBy(xpath = "//p[contains(text(), 'Array')]/following::button[1]")
+    @FindBy(xpath = "//p[contains(text(), 'reverse')]/following::button[1]")
     public WebElement deleteBtn;
 
-    @FindBy(xpath = "//p[contains(text(), 'Array')]/following::button[2]")
+    @FindBy(xpath = "//p[contains(text(), 'reverse')]/following::button[2]")
     public WebElement editBtn;
 
     @FindBy(xpath = "//button[@class='btn btn-sm-outline-success']")
     public WebElement checkBtn;
+
+    @FindBy(xpath = "//textarea[@name='newQuestion']")
+    public WebElement textBox;
 
 }

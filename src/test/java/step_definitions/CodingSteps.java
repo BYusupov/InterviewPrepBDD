@@ -12,8 +12,11 @@ import utils.BrowserUtils;
 public class CodingSteps implements CommonPage {
     CodingPage page;
 
+
     public CodingSteps() {
         this.page = new CodingPage();
+
+
     }
 
     @Then("verify question {string} is displayed")
@@ -32,18 +35,27 @@ public class CodingSteps implements CommonPage {
         BrowserUtils.click(page.deleteBtn);
     }
 
+
     @When("user clicks edit Array reverse of question")
     public void user_clicks_edit_array_reverse_of_question() {
         BrowserUtils.click(page.editBtn);
     }
-//    @And("user deletes existing question {string}")
-//    public void userDeletesExistingQuestion(String txt) {
-//        BrowserUtils.sendKeys();
-//    }
+
+    @And("user clicks on texbox")
+    public void userClicksOnTexbox() {
+        BrowserUtils.click(page.textBox);
+    }
+
+    @And("user deletes existing question")
+    public void userDeletesExistingQuestion() {
+
+        BrowserUtils.selectAllText(page.textBox);
+        page.textBox.sendKeys(Keys.CLEAR);
+    }
 
     @And("user edits question {string} as {string}")
     public void userEditsQuestionAs(String value, String txt) {
-        BrowserUtils.sendKeys(BrowserUtils.getDriver().findElement(By.xpath(String.format(XPATH_TEMPLATE_TEXTAREA_TXT, txt))), value);
+        BrowserUtils.sendKeys(page.textBox, value);
     }
 
     @And("user clicks check button")
@@ -52,5 +64,6 @@ public class CodingSteps implements CommonPage {
     }
 
 
-
 }
+
+
