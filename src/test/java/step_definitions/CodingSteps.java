@@ -41,7 +41,7 @@ public class CodingSteps implements CommonPage {
         BrowserUtils.click(page.editBtn);
     }
 
-    @And("user clicks on texbox")
+    @And("user clicks on textbox")
     public void userClicksOnTexbox() {
         BrowserUtils.click(page.textBox);
     }

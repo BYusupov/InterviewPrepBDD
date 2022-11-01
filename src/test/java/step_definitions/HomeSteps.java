@@ -67,6 +67,15 @@ public class HomeSteps implements CommonPage {
 
     }
 
+    @And("verify {string} button is displayed")
+    public void verifyButtonIsDisplayed(String btn) {
+        BrowserUtils.isDisplayed(BrowserUtils.getDriver().findElement(By.xpath(String.format(XPATH_TEMPLATE_TEXT,btn))));
+    }
+
+    @Then("verify {string} button is not displayed")
+    public void verifyButtonIsNotDisplayed(String feature) {
+        BrowserUtils.assertFalse(BrowserUtils.getDriver().findElement(By.xpath(String.format(XPATH_TEMPLATE_TEXT,feature))).isEnabled());
+    }
 }
 
 
