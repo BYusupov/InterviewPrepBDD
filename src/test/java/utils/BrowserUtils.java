@@ -3,10 +3,12 @@ package utils;
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.junit.Assert;
 import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.remote.RemoteWebDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
@@ -114,6 +116,12 @@ public class BrowserUtils {
         moveIntoView(element);
         highlightElement(element);
         element.sendKeys(inputText);
+    }public static void sendKeys(WebElement element){
+        //TODO: apply report -> logInfo("Entered the text ", element);
+        waitForElementVisibility(element);
+        moveIntoView(element);
+        highlightElement(element);
+        element.sendKeys();
     }
 
     public static String getText(WebElement element){
@@ -183,6 +191,13 @@ public class BrowserUtils {
     public static void selectByVisibleText(WebElement element, String text){
         Select select = new Select(element);
         select.selectByVisibleText(text);
+    }
+    public static void selectAllText(WebElement element){
+        Actions actionObj = new Actions(driver);
+        actionObj.keyDown(Keys.CONTROL)
+                .sendKeys(Keys.chord("A"))
+                .keyUp(Keys.CONTROL)
+                .perform();
     }
 
     public static boolean isClickable(WebElement element) {

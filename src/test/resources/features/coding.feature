@@ -30,5 +30,14 @@ Feature: Coding page scenarios
     Then verify question "Sum of 2   " is displayed
 
   @USIN-6
-  Scenario: Modify coding dashboard questions
+  Scenario: Delete dashboard questions
+    And user clicks delete Array reverse question
+
+  @USIN-6a
+  Scenario: Edit dashboard questions
+    And user clicks edit Array reverse of question
+    And user clicks on texbox
+   And user deletes existing question
+    And user edits question "String reverse" as "Array reverse"
+    And user clicks check button
 
