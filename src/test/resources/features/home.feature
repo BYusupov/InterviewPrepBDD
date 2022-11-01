@@ -1,8 +1,8 @@
 @regression
 Feature: Home page tests
-Given User opens Url
-  Background:
 
+  Background:
+    Given User opens Url
     When user enters "test@yahoo.com" as "Enter Username"
     And user enters "test123" as "Enter Password"
     And user clicks "Login" button
@@ -49,6 +49,11 @@ Given User opens Url
       | Coding        |
       | Soft skills   |
       | New Dashboard |
+
+  @USIN-2 @smoke @regression
+  Scenario:Verify user can see sign out button and shouldn't have manage access button
+    And verify "Sign out" button is displayed
+    Then verify "manage access" button is not displayed
 
 
 

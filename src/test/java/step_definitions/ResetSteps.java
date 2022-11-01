@@ -9,9 +9,11 @@ import pages.LoginPage;
 public class ResetSteps implements CommonPage {
 
     LoginPage page;
-    public ResetSteps(){
+
+    public ResetSteps() {
         page = new LoginPage();
     }
+
     @Given("I open url of homepage")
     public void iOpenUrlOfHomepage() {
     }

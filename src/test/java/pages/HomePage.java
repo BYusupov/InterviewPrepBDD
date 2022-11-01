@@ -7,13 +7,12 @@ import utils.BrowserUtils;
 
 public class HomePage {
 
-    public HomePage(){
+    public HomePage() {
         PageFactory.initElements(BrowserUtils.getDriver(), this);
     }
 
     @FindBy(id = "sample")
     public WebElement sampleElement;
-
 
 
     @FindBy(xpath = "(//button[@class='btn btn-success badge-pill newbtn mb-3'])[2]")

@@ -3,6 +3,7 @@ package utils;
 import io.cucumber.java.Scenario;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
+
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
@@ -11,38 +12,38 @@ public class CucumberLogUtils {
 
     private static Scenario currentScenario;
 
-    public static void initScenario(Scenario scenario){
+    public static void initScenario(Scenario scenario) {
         currentScenario = scenario;
     }
 
-    public static void logPass(String msg, boolean takeScreenshot){
+    public static void logPass(String msg, boolean takeScreenshot) {
         currentScenario.log(getLogTime() + "  PASS: " + msg);
-        if(takeScreenshot){
+        if (takeScreenshot) {
             final byte[] screenshot = ((TakesScreenshot) BrowserUtils.getDriver())
                     .getScreenshotAs(OutputType.BYTES);
             currentScenario.attach(screenshot, "image/png", "screenshot");
         }
     }
 
-    public static void logInfo(String msg, String takeScreenshot){
+    public static void logInfo(String msg, String takeScreenshot) {
         currentScenario.log(getLogTime() + "  INFO: " + msg);
-        if(takeScreenshot.equalsIgnoreCase("true")){
+        if (takeScreenshot.equalsIgnoreCase("true")) {
             final byte[] screenshot = ((TakesScreenshot) BrowserUtils.getDriver())
                     .getScreenshotAs(OutputType.BYTES);
             currentScenario.attach(screenshot, "image/png", "screenshot");
         }
     }
 
-    public static void logFail(String msg, boolean takeScreenshot){
+    public static void logFail(String msg, boolean takeScreenshot) {
         currentScenario.log(getLogTime() + "  FAIL: " + msg);
-        if(takeScreenshot){
+        if (takeScreenshot) {
             final byte[] screenshot = ((TakesScreenshot) BrowserUtils.getDriver())
                     .getScreenshotAs(OutputType.BYTES);
             currentScenario.attach(screenshot, "image/png", "screenshot");
         }
     }
 
-    public static String getLogTime(){
+    public static String getLogTime() {
         String format = "yyy-MM-dd HH:mm:ss";
         DateFormat dateFormat = new SimpleDateFormat(format);
         Calendar calendar = Calendar.getInstance();

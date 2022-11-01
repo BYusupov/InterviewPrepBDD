@@ -26,6 +26,7 @@ public class ManageAccessSteps implements CommonPage {
             }
         }
     }
+
     @When("user clicks on a button Action")
     public void userClicksOnAButtonAction() {
         BrowserUtils.click(page.actionBtn);
