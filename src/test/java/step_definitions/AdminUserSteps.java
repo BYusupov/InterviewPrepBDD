@@ -14,7 +14,7 @@ public class AdminUserSteps implements CommonPage {
 
     AdminUserPage page;
 
-    public AdminUserSteps(){
+    public AdminUserSteps() {
         page = new AdminUserPage();
     }
 
@@ -55,13 +55,6 @@ public class AdminUserSteps implements CommonPage {
         }
     }
 
-    @Then("Verify Edit button {string} is clickable")
-    public void verifyEditButtonIsClickable(String button) {
-        BrowserUtils.isClickable(
-                BrowserUtils.getDriver().findElement(
-                        By.xpath(String.format(XPATH_TEMPLATE_CLASS_CONTAINS, button))));
-    }
-
     @Then("Verify Delete button {string} is clickable")
     public void verifyDeleteButtonIsClickable(String button) {
         BrowserUtils.isClickable(
@@ -75,5 +68,4 @@ public class AdminUserSteps implements CommonPage {
         BrowserUtils.isDisplayed(BrowserUtils.getDriver().findElement(By.id(select)));
 
     }
-
 }

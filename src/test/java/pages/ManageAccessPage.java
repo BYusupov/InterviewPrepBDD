@@ -10,8 +10,9 @@ public class ManageAccessPage {
 
         PageFactory.initElements(BrowserUtils.getDriver(), this);
     }
-
-
     @FindBy(id = "Select-filter")
     public WebElement selectFilter;
+
+    @FindBy(xpath = "(//button[@id='dropdownMenu2'])[1]")
+    public WebElement actionBtn;
 }
