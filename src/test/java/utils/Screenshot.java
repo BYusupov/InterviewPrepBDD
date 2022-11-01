@@ -9,12 +9,12 @@ import java.io.File;
 import java.io.IOException;
 import java.util.Base64;
 
-public class Screenshot{
-    public static String takeScreenshot(WebDriver driver){
-        File scrFile = ((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
+public class Screenshot {
+    public static String takeScreenshot(WebDriver driver) {
+        File scrFile = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
         byte[] fileContent = new byte[0];
 
-        try{
+        try {
             fileContent = FileUtils.readFileToByteArray(scrFile);
         } catch (IOException e) {
             e.printStackTrace();
