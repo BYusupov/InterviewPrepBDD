@@ -19,7 +19,6 @@ import org.junit.runner.RunWith;
         ,tags = "@USIN-16"
 
 
-
 )
 public class CukesRunner {
 }
