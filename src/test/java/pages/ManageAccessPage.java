@@ -6,10 +6,11 @@ import org.openqa.selenium.support.PageFactory;
 import utils.BrowserUtils;
 
 public class ManageAccessPage {
-    public ManageAccessPage(){
+    public ManageAccessPage() {
 
         PageFactory.initElements(BrowserUtils.getDriver(), this);
     }
+
     @FindBy(id = "Select-filter")
     public WebElement selectFilter;
 

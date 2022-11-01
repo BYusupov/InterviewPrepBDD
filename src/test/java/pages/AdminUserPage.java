@@ -10,7 +10,7 @@ import java.util.List;
 
 
 public class AdminUserPage {
-    public AdminUserPage(){
+    public AdminUserPage() {
 
         PageFactory.initElements(BrowserUtils.getDriver(), this);
     }

@@ -7,15 +7,15 @@ import java.util.Properties;
 
 public class ConfigReader {
 
-    public static String readProperty(String property){
+    public static String readProperty(String property) {
         Properties prop = null;
-        try{
+        try {
             FileInputStream fileInput = new FileInputStream("config.properties");
             prop = new Properties();
             prop.load(fileInput);
-        }catch (FileNotFoundException e){
+        } catch (FileNotFoundException e) {
             e.printStackTrace();
-        }catch (IOException e){
+        } catch (IOException e) {
             e.printStackTrace();
         }
 

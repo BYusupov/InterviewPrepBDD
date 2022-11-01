@@ -50,10 +50,10 @@ Feature: Home page tests
       | Soft skills   |
       | New Dashboard |
 
-    @USIN-2 @smoke @regression
-      Scenario:Verify user can see sign out button and shouldn't have manage access button
-      And verify "Sign out" button is displayed
-      Then verify "manage access" button is not displayed
+  @USIN-2 @smoke @regression
+  Scenario:Verify user can see sign out button and shouldn't have manage access button
+    And verify "Sign out" button is displayed
+    Then verify "manage access" button is not displayed
 
 
 
