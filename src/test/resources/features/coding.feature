@@ -38,6 +38,6 @@ Feature: Coding page scenarios
     And user clicks edit "Wha" question
     And user clicks on textbox
     And user deletes existing question
-    And user edits question "String reverse"
+     And user edits question "String reverse"
     And user clicks check button
 
